@@ -13,7 +13,7 @@
 		String date = request.getParameter("date");
 		String time = request.getParameter("time");
 		String purpose = request.getParameter("purpose");
-		String content = request.getParameter("content");
+		String content = request.getParameter("content") != null? request.getParameter("content") : "없음" ;
 		String rTimeStamp = date.concat(" ").concat(time);
 		String id = (String)session.getAttribute("ID");
 		

@@ -82,13 +82,14 @@
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/siteDB","root","mysql");
-	
 			
 			stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from 예약 where 회원id='"+id+"';");
 			
 			int i=1;
+			
 			while(rs.next()){
+				
 				String time = rs.getString("예약시간");
 				out.print("<tr><td>"+i+"</td>");
 				out.print("<td>"+time.substring(0, time.length()-5)+"</td>");
