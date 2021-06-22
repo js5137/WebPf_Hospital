@@ -52,23 +52,13 @@ button {
 </style>
 <script type="text/javascript">
 	function chk() {
-		if (frm.id.length < 4) {
-			alert("ID는 4자 이상 15자 이내로 입력해 주세요.");
+		if (frm.id.value.length < 4) {
+			alert("ID는 4자 이상 10자 이내로 입력해 주세요.");
 			return false;
 		}
 
-		if (frm.id.length > 15) {
-			alert("ID는 4자 이상 15자 이내로 입력해 주세요.");
-			return false;
-		}
-
-		if (frm.pw.length < 4) {
-			alert("비밀번호는 4자 이상 10자 이내로 입력해 주세요.");
-			return false;
-		}
-
-		if (frm.id.length > 10) {
-			alert("비밀번호는 4자 이상 10자 이내로 입력해 주세요.");
+		if (frm.pw.value.length < 4) {
+			alert("비밀번호는 4자 이상 15자 이내로 입력해 주세요.");
 			return false;
 		}
 
@@ -102,13 +92,13 @@ button {
 							중복확인</a>
 					</p>
 					<p>비밀번호</p>
-					<input type="password" name="pw" required>
+					<input type="password" name="pw" maxlength="15" required>
 					<p>비밀번호 확인</p>
-					<input type="password" name="pwc" required>
+					<input type="password" name="pwc" maxlength="15" required>
 					<p>이름</p>
-					<input type="text" name="name" required>
+					<input type="text" name="name" maxlength="10" required>
 					<p>핸드폰 번호</p>
-					<input type="text" name="phone" required>
+					<input type="text" name="phone" maxlength="11" required>
 					<p>이메일 주소(선택)</p>
 					<input type="text" name="mail">
 					<p>

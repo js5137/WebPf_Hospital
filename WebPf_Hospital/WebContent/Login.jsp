@@ -73,8 +73,8 @@ button {
 		<div id="area1">
 			<h2>서비스 이용을 위해 로그인해주세요</h2>
 			<form action="LoginCheck.jsp" name="frm" method="post" onsubmit="return chk()">
-				<input type="text" placeholder="아이디" name="id"><br> <input
-					type="password" placeholder="비밀번호" name="pw"><br>
+				<input type="text" placeholder="아이디" name="id" maxlength="10"><br> <input
+					type="password" placeholder="비밀번호" name="pw" maxlength="15"><br>
 				<button type="submit">로그인</button>
 			</form>
 			<a href="FindPassword.jsp">비밀번호 찾기</a> <a href="Register.jsp">회원가입</a>

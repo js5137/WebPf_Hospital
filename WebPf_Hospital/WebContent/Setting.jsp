@@ -58,6 +58,27 @@
 		margin-top: 3px;
 	}
 </style>
+<script type="text/javascript">
+	function chk() {
+		if (frm.id.value.length < 4) {
+			alert("ID는 4자 이상 10자 이내로 입력해 주세요.");
+			return false;
+		}
+
+		if (frm.pw.value.length < 4) {
+			alert("비밀번호는 4자 이상 15자 이내로 입력해 주세요.");
+			return false;
+		}
+
+		return true;
+
+	}
+
+	function idChk() {
+		url = "IdCheck.jsp?id=" + frm.id.value;
+		window.open(url, "ID 중복체크", "width=300, height=200, resizable=no");
+	}
+</script>
 </head>
 <body>
 	<jsp:include page="Header.jsp"/>
@@ -65,16 +86,16 @@
 		<jsp:include page="menuBar.jsp"/>
 		<div id="area2">
 			<h2>회원정보 수정</h2>
-			<form action="SettingToDB.jsp" method="post">
+			<form action="SettingToDB.jsp" name="frm" method="post" onsubmit="return chk()">
 			<table id="table">
 			<tr><td><p>아이디</p></td></tr>
 			<tr><td><input type="text" name="id" value="${ID}" readonly></td></tr>
 			<tr><td><p>비밀번호</p></td></tr>
-			<tr><td><input type="password" name="pw" value="${PW}" required></td></tr>
+			<tr><td><input type="password" name="pw" value="${PW}" maxlength="15" required></td></tr>
 			<tr><td><p>이름</p></td></tr>
-			<tr><td><input type="text" name="name" value="${NAME}" required></td></tr>
+			<tr><td><input type="text" name="name" value="${NAME}" maxlength="10" required></td></tr>
 			<tr><td><p>핸드폰 번호</p></td></tr>
-			<tr><td><input type="text" name="phone" value="${PHONE}" required></td></tr>
+			<tr><td><input type="text" name="phone" value="${PHONE}" maxlength="11" required></td></tr>
 			<tr><td><p>이메일 주소(선택)</p></td></tr>
 			<tr><td><input type="text" name="mail" value="${MAIL}"></td></tr>
 			<tr><td><p><button type="submit">수정</button></p></td></tr>
